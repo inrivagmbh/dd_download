@@ -4,7 +4,7 @@
  *  Copyright notice
  *
  *  (c) 2013 Dennis Puszalowski <info@wildpixel.de>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -51,64 +51,69 @@ class Tx_DdDownload_Controller_FileController extends Tx_Extbase_MVC_Controller_
 	}
 
 	/**
+	 * categoryRepository
+	 *
+	 * @var Tx_DdDownload_Domain_Repository_CategoryRepository
+	 */
+	protected $categoryRepository;
+
+	/**
+	 * injectCategoryRepository
+	 *
+	 * @param Tx_DdDownload_Domain_Repository_CategoryRepository $categoryRepository
+	 * @return void
+	 */
+	public function injectCategoryRepository(Tx_DdDownload_Domain_Repository_CategoryRepository $categoryRepository) {
+		$this->categoryRepository = $categoryRepository;
+	}
+
+	/**
 	 * action list
 	 *
 	 * @return void
 	 */
 	public function listAction() {
-		//$extutil = new Tx_Extbase_Utility_Extension;
-		//$extutil->createAutoloadRegistryForExtension('dd_download', t3lib_extMgm::extPath('dd_download'));
-		
+		$selectedCategories = explode(',', $this->settings['categories']);
+		$categories = $this->categoryRepository->findByUids($selectedCategories);
+
 		$fileSort = $this->settings['sorting'];
 		$orderBy = $this->settings['orderBy'];
-		
-		if(empty($this->settings['orderBy'])) {
+
+		if (empty($this->settings['orderBy'])) {
 			$orderBy = 'uid';
 		}
-		
-		switch($fileSort) {
+
+		switch ($fileSort) {
 			case 'ORDER_ASCENDING':
 				$defaultOrderings = array($orderBy => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING);
 				break;
-				
+
 			case 'ORDER_DESCENDING':
 				$defaultOrderings = array($orderBy => Tx_Extbase_Persistence_QueryInterface::ORDER_DESCENDING);
 				break;
-				
+
 			default:
 				$defaultOrderings = array($orderBy => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING);
 				break;
 		}
-		
-		$this->fileRepository->setDefaultOrderings($defaultOrderings);
-		
-		
-		
+
+		if ('' !== $this->settings['orderBy'] || '' !== $this->settings['sorting']) {
+			$this->fileRepository->setDefaultOrderings($defaultOrderings);
+			$files = array();
+			foreach ($categories AS $category) {
+				$categoryUid = $category->getUid();
+				$files = $this->fileRepository->findByCategory($categoryUid, TRUE);
+				$category->setFiles($files);
+			}
+		}
+
 		/**
 		 * Template Switch
 		 */
-		$defaultTemplatePath = 'typo3conf/ext/'.$this->request->getControllerExtensionKey().'/Resources/Private/Templates/File/';
-		$userTemplate = $this->settings['template'];
-		
-		if($userTemplate) {
-			$this->view->setTemplatePathAndFilename($userTemplate);
+		if ($this->settings['template']) {
+			$this->view->setTemplatePathAndFilename($this->settings['template']);
 		}
-		else {
-			$this->view->setTemplatePathAndFilename($defaultTemplatePath.'List.html');
-		}
-		
-		
-		
-		$files = $this->fileRepository->findAll($fileSort);
-		$categories = $this->fileRepository->getAllCat();
-		
-		$this->view->assignMultiple(array(
-			'files'				=>		$files,
-			'categories'		=>		$categories
-		));
-		
-		//$this->view->assign('files', $files);
-	}
 
+		$this->view->assign('categories', $categories);
+	}
 }
-?>

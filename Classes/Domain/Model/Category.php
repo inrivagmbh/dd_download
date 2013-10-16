@@ -49,6 +49,14 @@ class Tx_DdDownload_Domain_Model_Category extends Tx_Extbase_DomainObject_Abstra
 	protected $icon;
 
 	/**
+	 * Files
+	 *
+	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_DdDownload_Domain_Model_File>
+	 * @lazy
+	 */
+	protected $files;
+
+	/**
 	 * Returns the title
 	 *
 	 * @return string $title
@@ -86,5 +94,23 @@ class Tx_DdDownload_Domain_Model_Category extends Tx_Extbase_DomainObject_Abstra
 		$this->icon = $icon;
 	}
 
+	/**
+	 * Sets the files
+	 *
+	 * @param Tx_Extbase_Persistence_ObjectStorage $files
+	 * @return void
+	 */
+	public function setFiles(Tx_Extbase_Persistence_ObjectStorage $files) {
+		$this->files = $files;
+	}
+
+	/**
+	 * Returns the files
+	 *
+	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_DdDownload_Domain_Model_File> $files
+	 */
+	public function getFiles() {
+		return $this->files;
+	}
+
 }
-?>

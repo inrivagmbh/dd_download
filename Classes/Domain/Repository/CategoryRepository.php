@@ -31,25 +31,16 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Tx_DdDownload_Domain_Repository_FileRepository extends Tx_Extbase_Persistence_Repository {
+class Tx_DdDownload_Domain_Repository_CategoryRepository extends Tx_Extbase_Persistence_Repository {
 
 	/**
-	 * @param mixed $category
-	 * @param boolean $returnObjectStorage
+	 * @param array $uids
 	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface $result
 	 */
-	public function findByCategory($category, $returnObjectStorage = FALSE) {
+	public function findByUids($uids) {
 		$query = $this->createQuery();
-		$rules = $query->contains('categories', $category);
+		$rules = $query->in('uid', $uids);
 		$result = $query->matching($rules)->execute();
-
-		if (TRUE === $returnObjectStorage) {
-			$objectStorage = new Tx_Extbase_Persistence_ObjectStorage();
-			foreach($result AS $obj) {
-				$objectStorage->attach($obj);
-			}
-			return $objectStorage;
-		}
 
 		return $result;
 	}

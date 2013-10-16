@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_dddownload_domain_model_category'] = array(
 	'ctrl' => $TCA['tx_dddownload_domain_model_category']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, icon',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, icon, files',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, icon,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, icon, files,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -113,6 +113,18 @@ $TCA['tx_dddownload_domain_model_category'] = array(
 				'size' => 5,
 				'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
 				'disallowed' => '',
+			),
+		),
+		'files' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:tx_dddownload_domain_model_category.files',
+			'config' => array(
+				'type' => 'inline',
+				'foreign_table' => 'tx_dddownload_domain_model_file',
+				'MM_opposite_field' => 'categories',
+				'MM' => 'tx_dddownload_file_category_mm',
+				'minitems' => 0,
+				'maxitems' => 999,
 			),
 		),
 	),
