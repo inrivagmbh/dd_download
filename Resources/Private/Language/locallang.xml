@@ -20,6 +20,8 @@
 			<label index="tx_dddownload_domain_model_category">File Categories</label>
 			<label index="tx_dddownload_domain_model_category.title">Title</label>
 			<label index="tx_dddownload_domain_model_category.icon">Icon</label>			
+			<label index="tx_dddownload.filterCategory">Filter Category</label>
+			<label index="tx_dddownload.filterSubmit">Filter</label>
 		</languageKey>
 		<languageKey index="de" type="array">	
 			<label index="tx_dddownload_domain_model_file">Dateien</label>

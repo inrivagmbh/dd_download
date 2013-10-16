@@ -26,7 +26,7 @@
 
 /**
  *
- *
+ * @author Dennis Puszalowski <info@wildpixel.de>, Benjamin Rau <rau@codearts.at>
  * @package dd_download
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
@@ -73,8 +73,22 @@ class Tx_DdDownload_Controller_FileController extends Tx_Extbase_MVC_Controller_
 	 * @return void
 	 */
 	public function listAction() {
-		$selectedCategories = explode(',', $this->settings['categories']);
-		$categories = $this->categoryRepository->findByUids($selectedCategories);
+		$permittedCategoryUids = explode(',', $this->settings['categories']);
+		$permittedCategories = $this->categoryRepository->findByUids($permittedCategoryUids);
+
+		if (TRUE === $this->request->hasArgument('category') && TRUE == intval($this->settings['enableFeCategoryFilter'])) {
+			$selectedFilterCategoryUid = $this->request->getArgument('category');
+			$selectedFilterCategory = $this->categoryRepository->findByUid($selectedFilterCategoryUid);
+
+			if (TRUE === in_array($selectedFilterCategoryUid, $permittedCategoryUids)) {
+				$categories[] = $selectedFilterCategory;
+				$this->view->assign('selectedFilterCategory', $selectedFilterCategory);
+			}
+		}
+
+		if (FALSE === isset($categories)) {
+			$categories = $permittedCategories;
+		}
 
 		$fileSort = $this->settings['sorting'];
 		$orderBy = $this->settings['orderBy'];
@@ -114,6 +128,7 @@ class Tx_DdDownload_Controller_FileController extends Tx_Extbase_MVC_Controller_
 			$this->view->setTemplatePathAndFilename($this->settings['template']);
 		}
 
+		$this->view->assign('permittedCategories', $permittedCategories);
 		$this->view->assign('categories', $categories);
 	}
 }
