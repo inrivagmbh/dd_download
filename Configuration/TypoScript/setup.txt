@@ -1,0 +1,21 @@
+plugin.tx_dddownload {
+	view {
+		templateRootPath = {$plugin.tx_dddownload.view.templateRootPath}
+		partialRootPath = {$plugin.tx_dddownload.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_dddownload.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_dddownload.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_dddownload._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+)

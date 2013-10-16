@@ -1,0 +1,14 @@
+plugin.tx_dddownload {
+	view {
+		# cat=plugin.tx_dddownload/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:dd_download/Resources/Private/Templates/
+		# cat=plugin.tx_dddownload/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:dd_download/Resources/Private/Partials/
+		# cat=plugin.tx_dddownload/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:dd_download/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_dddownload//a; type=string; label=Default storage PID
+		storagePid = 
+	}
+}

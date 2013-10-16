@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the DD Downloads extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">	
+			<label index="tx_dddownload_domain_model_file">Files</label>
+			<label index="tx_dddownload_domain_model_file.extname">DD Download</label>
+			<label index="tx_dddownload_domain_model_file.extdesc">A simple download extension for different filetypes.</label>
+			<label index="tx_dddownload_domain_model_file.title">Title</label>
+			<label index="tx_dddownload_domain_model_file.description">Description</label>
+			<label index="tx_dddownload_domain_model_file.file">File</label>
+			<label index="tx_dddownload_domain_model_file.filename">File-/Linkname (optional)</label>
+			<label index="tx_dddownload_domain_model_file.thumb">Thumbnail</label>
+			<label index="tx_dddownload_domain_model_file.link">External link</label>
+			<label index="tx_dddownload_domain_model_file.category">Category</label>
+			<label index="tx_dddownload_domain_model_file.filesize">Filesize</label>
+			<label index="tx_dddownload_domain_model_category">File Categories</label>
+			<label index="tx_dddownload_domain_model_category.title">Title</label>
+			<label index="tx_dddownload_domain_model_category.icon">Icon</label>			
+		</languageKey>
+		<languageKey index="de" type="array">	
+			<label index="tx_dddownload_domain_model_file">Dateien</label>
+			<label index="tx_dddownload_domain_model_file.extname">DD Download</label>
+			<label index="tx_dddownload_domain_model_file.extdesc">Simple Download Extension f&#252;r unterschiedliche Dateitypen.</label>
+			<label index="tx_dddownload_domain_model_file.title">Titel</label>
+			<label index="tx_dddownload_domain_model_file.description">Beschreibung</label>
+			<label index="tx_dddownload_domain_model_file.file">Datei</label>
+			<label index="tx_dddownload_domain_model_file.filename">Datei-/Linkname (optional)</label>
+			<label index="tx_dddownload_domain_model_file.thumb">Thumbnail</label>
+			<label index="tx_dddownload_domain_model_file.link">Externer link</label>
+			<label index="tx_dddownload_domain_model_file.category">Kategorie</label>
+			<label index="tx_dddownload_domain_model_file.filesize">Dateigr&#246;&#223;e</label>
+			<label index="tx_dddownload_domain_model_category">Kategorie</label>
+			<label index="tx_dddownload_domain_model_category.title">Titel</label>
+			<label index="tx_dddownload_domain_model_category.icon">Icon</label>			
+		</languageKey>
+	</data>
+</T3locallang>
