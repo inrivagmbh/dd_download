@@ -13,14 +13,15 @@
 			<label index="tx_dddownload_domain_model_file.filename">File-/Linkname (optional)</label>
 			<label index="tx_dddownload_domain_model_file.thumb">Thumbnail</label>
 			<label index="tx_dddownload_domain_model_file.link">External link (without 'http://') / instead of download</label>
-			<label index="tx_dddownload_domain_model_file.category">Category</label>
+			<label index="tx_dddownload_domain_model_file.categories">Categories</label>
 			<label index="tx_dddownload_domain_model_file.categorychoose">Please choose ...</label>
 			<label index="tx_dddownload_domain_model_file.add">Additional</label>
 			
 			<label index="tx_dddownload_domain_model_category">Category</label>
 			<label index="tx_dddownload_domain_model_category.title">Title</label>
 			<label index="tx_dddownload_domain_model_category.icon">Icon</label>
-			
+			<label index="tx_dddownload_domain_model_category.files">Files</label>
+
 			<label index="flexform.main">Main Settings</label>
 			<label index="flexform.tmpl">Select alternate template</label>
 			<label index="flexform.categories">Displayable categories</label>

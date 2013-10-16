@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_dddownload_domain_model_file'] = array(
 	'ctrl' => $TCA['tx_dddownload_domain_model_file']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, file, filename, thumb, link, category',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, file, filename, thumb, link, categories',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, file, category,--div--;LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:tx_dddownload_domain_model_file.add;sys_language_uid;;;;1-1-1, filename, link, description, thumb,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, file, categories,--div--;LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:tx_dddownload_domain_model_file.add;sys_language_uid;;;;1-1-1, filename, link, description, thumb,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -166,17 +166,19 @@ $TCA['tx_dddownload_domain_model_file'] = array(
 				'eval' => 'trim'
 			),
 		),
-		'category' => array(
+		'categories' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:tx_dddownload_domain_model_file.category',
+			'label' => 'LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:tx_dddownload_domain_model_file.categories',
 			'config' => array(
 				'type' => 'select',
 				'items' => array(
 					array('LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:tx_dddownload_domain_model_file.categorychoose', 0),
 				),
 				'foreign_table' => 'tx_dddownload_domain_model_category',
+				'MM' => 'tx_dddownload_file_category_mm',
 				'minitems' => 0,
-				'maxitems' => 1,
+				'maxitems' => 999,
+				'size' => 5,
 			),
 		),
 	),

@@ -79,10 +79,10 @@ class Tx_DdDownload_Domain_Model_File extends Tx_Extbase_DomainObject_AbstractEn
 	/**
 	 * Category
 	 *
-	 * @var Tx_DdDownload_Domain_Model_Category
+	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_DdDownload_Domain_Model_Category>
 	 * @lazy
 	 */
-	protected $category;
+	protected $categories;
 
 	/**
 	 * Returns the title
@@ -199,23 +199,21 @@ class Tx_DdDownload_Domain_Model_File extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Returns the category
+	 * Sets the categories
 	 *
-	 * @return Tx_DdDownload_Domain_Model_Category $category
+	 * @param Tx_Extbase_Persistence_ObjectStorage $categories
+	 * @return void
 	 */
-	public function getCategory() {
-		return $this->category;
+	public function setCategories(Tx_Extbase_Persistence_ObjectStorage $categories) {
+		$this->categories = $categories;
 	}
 
 	/**
-	 * Sets the category
+	 * Returns the categories
 	 *
-	 * @param Tx_DdDownload_Domain_Model_Category $category
-	 * @return void
+	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_DdDownload_Domain_Model_Category> $categories
 	 */
-	public function setCategory(Tx_DdDownload_Domain_Model_Category $category) {
-		$this->category = $category;
+	public function getCategories() {
+		return $this->categories;
 	}
-
 }
-?>
