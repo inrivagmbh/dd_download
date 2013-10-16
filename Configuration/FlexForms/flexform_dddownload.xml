@@ -43,7 +43,16 @@
 						</config>
 					</TCEforms>
 				</settings.categories>
-				
+
+				<settings.enableFeCategoryFilter>
+					<TCEforms>
+						<label>LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:flexform.enableFeCategoryFilter</label>
+						<config>
+							<type>check</type>
+						</config>
+					</TCEforms>
+				</settings.enableFeCategoryFilter>
+
 				<settings.orderBy>
 					<TCEforms>
 						<label>LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:flexform.orderBy</label>

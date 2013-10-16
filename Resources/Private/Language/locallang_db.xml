@@ -54,6 +54,7 @@
 			<label index="flexform.main">Allgemein</label>
 			<label index="flexform.tmpl">Alternatives Template ausw&#228;hlen</label>
 			<label index="flexform.categories">Anzuzeigende Kategorien</label>
+			<label index="flexform.enableFeCategoryFilter">Kategorie Filterung erlauben?</label>
 			<label index="flexform.sorting">Reihenfolge</label>
 			<label index="flexform.choose">Bitte ausw&#228;hlen ...</label>
 			<label index="flexform.chooseasc">aufsteigend</label>
