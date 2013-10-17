@@ -8,7 +8,6 @@
 			</TCEforms>
 			<type>array</type>
 			<el>
-			
 				<settings.template>
 					<TCEforms>
 						<label>LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:flexform.tmpl</label>
@@ -31,7 +30,6 @@
 						</config>
 					</TCEforms>
 				</settings.template>
-			
 				<settings.categories>
 					<TCEforms>
 						<label>LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:flexform.categories</label>
@@ -43,7 +41,6 @@
 						</config>
 					</TCEforms>
 				</settings.categories>
-
 				<settings.enableFeCategoryFilter>
 					<TCEforms>
 						<label>LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:flexform.enableFeCategoryFilter</label>
@@ -52,7 +49,6 @@
 						</config>
 					</TCEforms>
 				</settings.enableFeCategoryFilter>
-
 				<settings.orderBy>
 					<TCEforms>
 						<label>LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:flexform.orderBy</label>
@@ -83,7 +79,6 @@
 						</config>
 					</TCEforms>
 				</settings.orderBy>
-				
 				<settings.sorting>
 					<TCEforms>
 						<label>LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:flexform.sorting</label>
@@ -106,7 +101,14 @@
 						</config>
 					</TCEforms>
 				</settings.sorting>
-			
+				<settings.enableFeTagFilter>
+					<TCEforms>
+						<label>LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:flexform.enableFeTagFilter</label>
+						<config>
+							<type>check</type>
+						</config>
+					</TCEforms>
+				</settings.enableFeTagFilter>
 			</el>
 		</ROOT>
 	</Bereich1>

@@ -1,76 +1,67 @@
-
 {namespace dd=Tx_DdDownload_ViewHelpers}
+
 <f:layout name="Default" />
 
-This Template is responsible for creating a table of domain objects.
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-Resources:
-Private:
-Templates:
-List.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
 <f:section name="main">
-	<f:if condition="{settings.enableFeCategoryFilter}">
-		<div class="categoryFilter">
-			<f:render partial="File/CategoryFilter" arguments="{_all}" />
+	<f:if condition="{enableFeFilter}">
+		<div class="filterContainer">
+			<f:render partial="File/Filter" arguments="{_all}" />
 		</div>
 	</f:if>
 	<div class="listContainer">
 		<f:for each="{categories}" as="displayCat">
-			<table class="table table-bordered table-striped">
-				<caption><f:if condition="{displayCat.icon}"><f:image src="uploads/tx_dddownload/{displayCat.icon}" alt="{displayCat.title}" /> </f:if><strong>{displayCat.title}</strong></caption>
-				<thead>
-				<tr>
-					<th><f:translate key="tx_dddownload_domain_model_file.title" /></th>
-					<th colspan="2"><f:translate key="tx_dddownload_domain_model_file.file" /></th>
-				</tr>
-				</thead>
-				<tbody>
-					<f:for each="{displayCat.files}" as="file">
-							<tr>
-								<td class="title">
-									<strong>{file.title}</strong>
-									<f:if condition="{file.description}">
-										<div><f:format.html parseFuncTSPath="">{file.description}</f:format.html></div>
-									</f:if>
-									<f:if condition="{file.thumb}">
-										<f:image src="uploads/tx_dddownload/{file.thumb}" width="100" alt="{file.title}" class="img-polaroid" />
-									</f:if>
-								</td>
-								<td class="fileinfos">
-									<f:if condition="{file.link}">
-										<f:then><f:image src="typo3conf/ext/dd_download/Resources/Public/Icons/document-bookmark.png" alt="{file.title}"/></f:then>
-										<f:else><f:image src="typo3conf/ext/dd_download/Resources/Public/Icons/{dd:fileicon(file: 'uploads/tx_dddownload/{file.file}')}" alt="{file.title}"/></f:else>
-									</f:if>
-									<f:if condition="{file.filename}">
-										<f:then>{file.filename}</f:then>
-										<f:else>{file.file}</f:else>
-									</f:if>
-									<br />
+			<f:if condition="{displayCat.files}">
+				<table class="table table-bordered table-striped">
+					<caption><f:if condition="{displayCat.icon}"><f:image src="uploads/tx_dddownload/{displayCat.icon}" alt="{displayCat.title}" /> </f:if><strong>{displayCat.title}</strong></caption>
+					<thead>
+					<tr>
+						<th><f:translate key="tx_dddownload_domain_model_file.title" /></th>
+						<th colspan="2"><f:translate key="tx_dddownload_domain_model_file.file" /></th>
+					</tr>
+					</thead>
+					<tbody>
+						<f:for each="{displayCat.files}" as="file">
+								<tr>
+									<td class="title">
+										<strong>{file.title}</strong>
+										<f:if condition="{file.description}">
+											<div><f:format.html parseFuncTSPath="">{file.description}</f:format.html></div>
+										</f:if>
+										<f:if condition="{file.thumb}">
+											<f:image src="uploads/tx_dddownload/{file.thumb}" width="100" alt="{file.title}" class="img-polaroid" />
+										</f:if>
+									</td>
+									<td class="fileinfos">
+										<f:if condition="{file.link}">
+											<f:then><f:image src="{f:uri.resource(path: 'Icons/document-bookmark.png')}" alt="{file.title}"/></f:then>
+											<f:else><f:image src="{f:uri.resource(path: 'Icons/{dd:fileicon(file: \'{file.file}\')}')}" alt="{file.title}"/></f:else>
+										</f:if>
+										<f:if condition="{file.filename}">
+											<f:then>{file.filename}</f:then>
+											<f:else>{file.file}</f:else>
+										</f:if>
+										<br />
 
-									<f:if condition="{file.link}">
-										<f:then><small><f:link.external uri="{file.link}" target="_blank">http://{file.link}</f:link.external></small></f:then>
-										<f:else><small><f:translate key="tx_dddownload_domain_model_file.filesize" /> {dd:filesize(file: '{file.file}')}</small></f:else>
-									</f:if>
-								</td>
-								<td class="dlbutton">
-									<f:if condition="{file.link}">
-										<f:then>
-											<f:link.external uri="{file.link}" target="_blank" class="btn btn-mini"><i class="icon-external-link"></i> Link</f:link.external>
-										</f:then>
-										<f:else>
-											<f:link.external uri="http://{dd:baseurl(file: '{file.file}')}/{file.file}" target="_blank" class="btn btn-small"><i class="icon-download"></i> Download</f:link.external>
-										</f:else>
-									</f:if>
-								</td>
-							</tr>
-					</f:for>
-				</tbody>
-			</table>
+										<f:if condition="{file.link}">
+											<f:then><small><f:link.external uri="{file.link}" target="_blank">http://{file.link}</f:link.external></small></f:then>
+											<f:else><small><f:translate key="tx_dddownload_domain_model_file.filesize" /> {dd:filesize(file: '{file.file}')}</small></f:else>
+										</f:if>
+									</td>
+									<td class="dlbutton">
+										<f:if condition="{file.link}">
+											<f:then>
+												<f:link.external uri="{file.link}" target="_blank" class="btn btn-mini"><i class="icon-external-link"></i> <f:translate key="tx_dddownload.linkLabel" /></f:link.external>
+											</f:then>
+											<f:else>
+												<f:link.external uri="http://{dd:baseurl(file: '{file.file}')}/{file.file}" target="_blank" class="btn btn-small"><i class="icon-download"></i> <f:translate key="tx_dddownload.downloadLabel" /></f:link.external>
+											</f:else>
+										</f:if>
+									</td>
+								</tr>
+						</f:for>
+					</tbody>
+				</table>
+			</f:if>
 		</f:for>
 	</div>
 </f:section>

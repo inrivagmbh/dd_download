@@ -85,6 +85,14 @@ class Tx_DdDownload_Domain_Model_File extends Tx_Extbase_DomainObject_AbstractEn
 	protected $categories;
 
 	/**
+	 * Tags
+	 *
+	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_DdDownload_Domain_Model_Tag>
+	 * @lazy
+	 */
+	protected $tags;
+
+	/**
 	 * Returns the title
 	 *
 	 * @return string $title
@@ -215,5 +223,24 @@ class Tx_DdDownload_Domain_Model_File extends Tx_Extbase_DomainObject_AbstractEn
 	 */
 	public function getCategories() {
 		return $this->categories;
+	}
+
+	/**
+	 * Sets the tags
+	 *
+	 * @param Tx_Extbase_Persistence_ObjectStorage $tags
+	 * @return void
+	 */
+	public function setTags(Tx_Extbase_Persistence_ObjectStorage $tags) {
+		$this->tags = $tags;
+	}
+
+	/**
+	 * Returns the tags
+	 *
+	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_DdDownload_Domain_Model_Tag> $tags
+	 */
+	public function getTags() {
+		return $this->tags;
 	}
 }

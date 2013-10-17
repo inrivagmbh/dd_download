@@ -4,7 +4,7 @@
  *  Copyright notice
  *
  *  (c) 2013 Dennis Puszalowski <info@wildpixel.de>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,36 +26,37 @@
 
 /**
  *
- *
+ * @author Benjamin Rau <rau@codearts.at>
  * @package dd_download
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Tx_DdDownload_Domain_Repository_FileRepository extends Tx_Extbase_Persistence_Repository {
+class Tx_DdDownload_Domain_Model_Tag extends Tx_Extbase_DomainObject_AbstractEntity {
 
 	/**
-	 * @param Tx_DdDownload_Domain_Model_Category $category
-	 * @param Tx_DdDownload_Domain_Model_Tag $tag
-	 * @param boolean $returnObjectStorage
-	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface $result
+	 * Title
+	 *
+	 * @var string
+	 * @validate NotEmpty
 	 */
-	public function findWithFilters($category, $tag = NULL, $returnObjectStorage = FALSE) {
-		$query = $this->createQuery();
-		$rules = $query->contains('categories', $category);
-		if (TRUE === isset($tag)) {
-			$tagRule = $query->contains('tags', $tag);
-			$rules = $query->logicalAnd($rules, $tagRule);
-		}
-		$result = $query->matching($rules)->execute();
+	protected $title;
 
-		if (TRUE === $returnObjectStorage) {
-			$objectStorage = new Tx_Extbase_Persistence_ObjectStorage();
-			foreach($result AS $obj) {
-				$objectStorage->attach($obj);
-			}
-			return $objectStorage;
-		}
+	/**
+	 * Returns the title
+	 *
+	 * @return string $title
+	 */
+	public function getTitle() {
+		return $this->title;
+	}
 
-		return $result;
+	/**
+	 * Sets the title
+	 *
+	 * @param string $title
+	 * @return void
+	 */
+	public function setTitle($title) {
+		$this->title = $title;
 	}
 }

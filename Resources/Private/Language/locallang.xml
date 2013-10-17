@@ -16,12 +16,20 @@
 			<label index="tx_dddownload_domain_model_file.thumb">Thumbnail</label>
 			<label index="tx_dddownload_domain_model_file.link">External link</label>
 			<label index="tx_dddownload_domain_model_file.categories">Categories</label>
+			<label index="tx_dddownload_domain_model_file.tags">Tags</label>
 			<label index="tx_dddownload_domain_model_file.filesize">Filesize</label>
 			<label index="tx_dddownload_domain_model_category">File Categories</label>
 			<label index="tx_dddownload_domain_model_category.title">Title</label>
 			<label index="tx_dddownload_domain_model_category.icon">Icon</label>			
+			<label index="tx_dddownload_domain_model_tag">Tag</label>
+			<label index="tx_dddownload_domain_model_tag.title">Title</label>
 			<label index="tx_dddownload.filterCategory">Filter Category</label>
+			<label index="tx_dddownload.filterCategoryChoose">Choose filter...</label>
+			<label index="tx_dddownload.filterTag">Filter Tag</label>
+			<label index="tx_dddownload.filterTagChoose">Choose filter...</label>
 			<label index="tx_dddownload.filterSubmit">Filter</label>
+			<label index="tx_dddownload.linkLabel">Link</label>
+			<label index="tx_dddownload.downloadLabel">Download</label>
 		</languageKey>
 		<languageKey index="de" type="array">	
 			<label index="tx_dddownload_domain_model_file">Dateien</label>
@@ -34,10 +42,20 @@
 			<label index="tx_dddownload_domain_model_file.thumb">Thumbnail</label>
 			<label index="tx_dddownload_domain_model_file.link">Externer link</label>
 			<label index="tx_dddownload_domain_model_file.categories">Kategorien</label>
+			<label index="tx_dddownload_domain_model_file.tags">Tags</label>
 			<label index="tx_dddownload_domain_model_file.filesize">Dateigr&#246;&#223;e</label>
 			<label index="tx_dddownload_domain_model_category">Kategorie</label>
 			<label index="tx_dddownload_domain_model_category.title">Titel</label>
 			<label index="tx_dddownload_domain_model_category.icon">Icon</label>			
+			<label index="tx_dddownload_domain_model_tag">Tag</label>
+			<label index="tx_dddownload_domain_model_tag.title">Title</label>
+			<label index="tx_dddownload.filterCategory">Filter Kategorie</label>
+			<label index="tx_dddownload.filterCategoryChoose">Filter w&#228;hlen...</label>
+			<label index="tx_dddownload.filterTag">Filter Tag</label>
+			<label index="tx_dddownload.filterTagChoose">>Filter w&#228;hlen...</label>
+			<label index="tx_dddownload.filterSubmit">Filtern</label>
+			<label index="tx_dddownload.linkLabel">Link</label>
+			<label index="tx_dddownload.downloadLabel">Download</label>
 		</languageKey>
 	</data>
 </T3locallang>
