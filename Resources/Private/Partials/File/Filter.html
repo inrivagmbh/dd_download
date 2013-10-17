@@ -7,5 +7,5 @@
 		<label for="tag"><f:translate key="tx_dddownload.filterTag" /></label>
 		<f:form.select name="tag" options="{permittedTags}" optionLabelField="title" value="{selectedFilterTag.uid}" prependOptionLabel="{f:translate(key: 'tx_dddownload.filterTagChoose')}" />
 	</f:if>
-	<f:form.submit name="submit" value="{f:translate(key: 'tx_dddownload.filterSubmit')}" />
+	<f:form.submit name="submit" class="btn" value="{f:translate(key: 'tx_dddownload.filterSubmit')}" />
 </f:form>
