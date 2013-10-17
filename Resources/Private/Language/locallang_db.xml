@@ -25,6 +25,7 @@
 			<label index="flexform.main">Main Settings</label>
 			<label index="flexform.tmpl">Select alternate template</label>
 			<label index="flexform.categories">Displayable categories</label>
+			<label index="flexform.enableFeCategoryFilter">Allow category filtering?</label>
 			<label index="flexform.sorting">Sortorder</label>
 			<label index="flexform.choose">Please choose ...</label>
 			<label index="flexform.chooseasc">ascending</label>
