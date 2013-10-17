@@ -40,12 +40,18 @@
 			<label index="tx_dddownload_domain_model_file.thumb">Thumbnail</label>
 			<label index="tx_dddownload_domain_model_file.link">Externer link</label>
 			<label index="tx_dddownload_domain_model_file.categories">Kategorien</label>
+			<label index="tx_dddownload_domain_model_file.tags">Tags</label>
 			<label index="tx_dddownload_domain_model_file.filesize">Dateigr&#246;&#223;e</label>
 			<label index="tx_dddownload_domain_model_category">Kategorie</label>
 			<label index="tx_dddownload_domain_model_category.title">Titel</label>
 			<label index="tx_dddownload_domain_model_category.icon">Icon</label>			
 			<label index="tx_dddownload_domain_model_tag">Tag</label>
 			<label index="tx_dddownload_domain_model_tag.title">Title</label>
+			<label index="tx_dddownload.filterCategory">Filter Kategorie</label>
+			<label index="tx_dddownload.filterCategoryChoose">Filter w&#228;hlen...</label>
+			<label index="tx_dddownload.filterTag">Filter Tag</label>
+			<label index="tx_dddownload.filterTagChoose">>Filter w&#228;hlen...</label>
+			<label index="tx_dddownload.filterSubmit">Filtern</label>
 		</languageKey>
 	</data>
 </T3locallang>
