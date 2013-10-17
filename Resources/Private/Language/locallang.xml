@@ -28,6 +28,8 @@
 			<label index="tx_dddownload.filterTag">Filter Tag</label>
 			<label index="tx_dddownload.filterTagChoose">Choose filter...</label>
 			<label index="tx_dddownload.filterSubmit">Filter</label>
+			<label index="tx_dddownload.linkLabel">Link</label>
+			<label index="tx_dddownload.downloadLabel">Download</label>
 		</languageKey>
 		<languageKey index="de" type="array">	
 			<label index="tx_dddownload_domain_model_file">Dateien</label>
@@ -52,6 +54,8 @@
 			<label index="tx_dddownload.filterTag">Filter Tag</label>
 			<label index="tx_dddownload.filterTagChoose">>Filter w&#228;hlen...</label>
 			<label index="tx_dddownload.filterSubmit">Filtern</label>
+			<label index="tx_dddownload.linkLabel">Link</label>
+			<label index="tx_dddownload.downloadLabel">Download</label>
 		</languageKey>
 	</data>
 </T3locallang>

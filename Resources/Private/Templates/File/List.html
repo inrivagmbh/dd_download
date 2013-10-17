@@ -1,17 +1,6 @@
-
 {namespace dd=Tx_DdDownload_ViewHelpers}
+
 <f:layout name="Default" />
-
-This Template is responsible for creating a table of domain objects.
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-Resources:
-Private:
-Templates:
-List.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
 	<f:if condition="{enableFeFilter}">
@@ -44,8 +33,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
 									</td>
 									<td class="fileinfos">
 										<f:if condition="{file.link}">
-											<f:then><f:image src="typo3conf/ext/dd_download/Resources/Public/Icons/document-bookmark.png" alt="{file.title}"/></f:then>
-											<f:else><f:image src="typo3conf/ext/dd_download/Resources/Public/Icons/{dd:fileicon(file: 'uploads/tx_dddownload/{file.file}')}" alt="{file.title}"/></f:else>
+											<f:then><f:image src="{f:uri.resource(path: 'Icons/document-bookmark.png')}" alt="{file.title}"/></f:then>
+											<f:else><f:image src="{f:uri.resource(path: 'Icons/{dd:fileicon(file: \'{file.file}\')}')}" alt="{file.title}"/></f:else>
 										</f:if>
 										<f:if condition="{file.filename}">
 											<f:then>{file.filename}</f:then>
@@ -61,10 +50,10 @@ Otherwise your changes will be overwritten the next time you save the extension 
 									<td class="dlbutton">
 										<f:if condition="{file.link}">
 											<f:then>
-												<f:link.external uri="{file.link}" target="_blank" class="btn btn-mini"><i class="icon-external-link"></i> Link</f:link.external>
+												<f:link.external uri="{file.link}" target="_blank" class="btn btn-mini"><i class="icon-external-link"></i> <f:translate key="tx_dddownload.linkLabel" /></f:link.external>
 											</f:then>
 											<f:else>
-												<f:link.external uri="http://{dd:baseurl(file: '{file.file}')}/{file.file}" target="_blank" class="btn btn-small"><i class="icon-download"></i> Download</f:link.external>
+												<f:link.external uri="http://{dd:baseurl(file: '{file.file}')}/{file.file}" target="_blank" class="btn btn-small"><i class="icon-download"></i> <f:translate key="tx_dddownload.downloadLabel" /></f:link.external>
 											</f:else>
 										</f:if>
 									</td>
