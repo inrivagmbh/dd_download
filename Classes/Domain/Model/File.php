@@ -77,7 +77,7 @@ class Tx_DdDownload_Domain_Model_File extends Tx_Extbase_DomainObject_AbstractEn
 	protected $link;
 
 	/**
-	 * Category
+	 * Categories
 	 *
 	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_DdDownload_Domain_Model_Category>
 	 * @lazy

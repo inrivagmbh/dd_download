@@ -70,17 +70,17 @@ class Tx_DdDownload_Controller_FileController extends Tx_Extbase_MVC_Controller_
 	/**
 	 * action list
 	 *
+	 * @param Tx_DdDownload_Domain_Model_Category $category
 	 * @return void
 	 */
-	public function listAction() {
+	public function listAction(Tx_DdDownload_Domain_Model_Category $category = NULL) {
 		$permittedCategoryUids = explode(',', $this->settings['categories']);
 		$permittedCategories = $this->categoryRepository->findByUids($permittedCategoryUids);
 
-		if (TRUE === $this->request->hasArgument('category') && TRUE == intval($this->settings['enableFeCategoryFilter'])) {
-			$selectedFilterCategoryUid = $this->request->getArgument('category');
-			$selectedFilterCategory = $this->categoryRepository->findByUid($selectedFilterCategoryUid);
+		if (TRUE === isset($category) && TRUE == intval($this->settings['enableFeCategoryFilter'])) {
+			$selectedFilterCategory = $category;
 
-			if (TRUE === in_array($selectedFilterCategoryUid, $permittedCategoryUids)) {
+			if (TRUE === in_array($selectedFilterCategory->getUid(), $permittedCategoryUids)) {
 				$categories[] = $selectedFilterCategory;
 				$this->view->assign('selectedFilterCategory', $selectedFilterCategory);
 			}

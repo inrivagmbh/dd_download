@@ -43,7 +43,7 @@
 			<label index="tx_dddownload_domain_model_file.filename">Datei-/Linkname (optional)</label>
 			<label index="tx_dddownload_domain_model_file.thumb">Thumbnail</label>
 			<label index="tx_dddownload_domain_model_file.link">Externer link (ohne 'http://') / anstatt Download</label>
-			<label index="tx_dddownload_domain_model_file.category">Kategorie</label>
+			<label index="tx_dddownload_domain_model_file.categories">Kategorien</label>
 			<label index="tx_dddownload_domain_model_file.categorychoose">Bitte ausw&#228;hlen ...</label>
 			<label index="tx_dddownload_domain_model_file.add">Weiteres</label>
 			

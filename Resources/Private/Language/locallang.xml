@@ -15,7 +15,7 @@
 			<label index="tx_dddownload_domain_model_file.filename">File-/Linkname (optional)</label>
 			<label index="tx_dddownload_domain_model_file.thumb">Thumbnail</label>
 			<label index="tx_dddownload_domain_model_file.link">External link</label>
-			<label index="tx_dddownload_domain_model_file.category">Category</label>
+			<label index="tx_dddownload_domain_model_file.categories">Categories</label>
 			<label index="tx_dddownload_domain_model_file.filesize">Filesize</label>
 			<label index="tx_dddownload_domain_model_category">File Categories</label>
 			<label index="tx_dddownload_domain_model_category.title">Title</label>
@@ -33,7 +33,7 @@
 			<label index="tx_dddownload_domain_model_file.filename">Datei-/Linkname (optional)</label>
 			<label index="tx_dddownload_domain_model_file.thumb">Thumbnail</label>
 			<label index="tx_dddownload_domain_model_file.link">Externer link</label>
-			<label index="tx_dddownload_domain_model_file.category">Kategorie</label>
+			<label index="tx_dddownload_domain_model_file.categories">Kategorien</label>
 			<label index="tx_dddownload_domain_model_file.filesize">Dateigr&#246;&#223;e</label>
 			<label index="tx_dddownload_domain_model_category">Kategorie</label>
 			<label index="tx_dddownload_domain_model_category.title">Titel</label>
