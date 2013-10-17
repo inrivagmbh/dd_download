@@ -31,6 +31,7 @@
 			<label index="flexform.tmpl">Select alternate template</label>
 			<label index="flexform.categories">Displayable categories</label>
 			<label index="flexform.enableFeCategoryFilter">Allow category filtering?</label>
+			<label index="flexform.enableFeTagFilter">Allow tag filtering?</label>
 			<label index="flexform.sorting">Sortorder</label>
 			<label index="flexform.choose">Please choose ...</label>
 			<label index="flexform.chooseasc">ascending</label>
@@ -66,6 +67,7 @@
 			<label index="flexform.tmpl">Alternatives Template ausw&#228;hlen</label>
 			<label index="flexform.categories">Anzuzeigende Kategorien</label>
 			<label index="flexform.enableFeCategoryFilter">Kategorie Filterung erlauben?</label>
+			<label index="flexform.enableFeTagFilter">Tag Filterung erlauben?</label>
 			<label index="flexform.sorting">Reihenfolge</label>
 			<label index="flexform.choose">Bitte ausw&#228;hlen ...</label>
 			<label index="flexform.chooseasc">aufsteigend</label>

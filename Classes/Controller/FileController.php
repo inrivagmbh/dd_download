@@ -71,9 +71,10 @@ class Tx_DdDownload_Controller_FileController extends Tx_Extbase_MVC_Controller_
 	 * action list
 	 *
 	 * @param Tx_DdDownload_Domain_Model_Category $category
+	 * @param Tx_DdDownload_Domain_Model_Tag $tag
 	 * @return void
 	 */
-	public function listAction(Tx_DdDownload_Domain_Model_Category $category = NULL) {
+	public function listAction(Tx_DdDownload_Domain_Model_Category $category = NULL, Tx_DdDownload_Domain_Model_Tag $tag = NULL) {
 		$permittedCategoryUids = explode(',', $this->settings['categories']);
 		$permittedCategories = $this->categoryRepository->findByUids($permittedCategoryUids);
 
@@ -88,6 +89,23 @@ class Tx_DdDownload_Controller_FileController extends Tx_Extbase_MVC_Controller_
 
 		if (FALSE === isset($categories)) {
 			$categories = $permittedCategories;
+		}
+
+		if (TRUE == intval($this->settings['enableFeTagFilter'])) {
+			$permittedTags = array();
+			foreach ($categories AS $category) {
+				foreach ($category->getFiles() AS $file) {
+					foreach($file->getTags() AS $t) {
+						$permittedTags[$t->getUid()] = $t;
+					}
+				}
+			}
+			$this->view->assign('permittedTags', $permittedTags);
+
+			if (TRUE === isset($tag)) {
+				$selectedFilterTag = $tag;
+				$this->view->assign('selectedFilterTag', $selectedFilterTag);
+			}
 		}
 
 		$fileSort = $this->settings['sorting'];
@@ -115,8 +133,7 @@ class Tx_DdDownload_Controller_FileController extends Tx_Extbase_MVC_Controller_
 			$this->fileRepository->setDefaultOrderings($defaultOrderings);
 			$files = array();
 			foreach ($categories AS $category) {
-				$categoryUid = $category->getUid();
-				$files = $this->fileRepository->findByCategory($categoryUid, TRUE);
+				$files = $this->fileRepository->findWithFilters($category, $selectedFilterTag, TRUE);
 				$category->setFiles($files);
 			}
 		}
@@ -128,6 +145,9 @@ class Tx_DdDownload_Controller_FileController extends Tx_Extbase_MVC_Controller_
 			$this->view->setTemplatePathAndFilename($this->settings['template']);
 		}
 
+		if (TRUE == intval($this->settings['enableFeCategoryFilter']) || TRUE == intval($this->settings['enableFeTagFilter'])) {
+			$this->view->assign('enableFeFilter', TRUE);
+		}
 		$this->view->assign('permittedCategories', $permittedCategories);
 		$this->view->assign('categories', $categories);
 	}

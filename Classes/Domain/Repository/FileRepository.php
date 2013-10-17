@@ -34,13 +34,18 @@
 class Tx_DdDownload_Domain_Repository_FileRepository extends Tx_Extbase_Persistence_Repository {
 
 	/**
-	 * @param mixed $category
+	 * @param Tx_DdDownload_Domain_Model_Category $category
+	 * @param Tx_DdDownload_Domain_Model_Tag $tag
 	 * @param boolean $returnObjectStorage
 	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface $result
 	 */
-	public function findByCategory($category, $returnObjectStorage = FALSE) {
+	public function findWithFilters($category, $tag = NULL, $returnObjectStorage = FALSE) {
 		$query = $this->createQuery();
 		$rules = $query->contains('categories', $category);
+		if (TRUE === isset($tag)) {
+			$tagRule = $query->contains('tags', $tag);
+			$rules = $query->logicalAnd($rules, $tagRule);
+		}
 		$result = $query->matching($rules)->execute();
 
 		if (TRUE === $returnObjectStorage) {

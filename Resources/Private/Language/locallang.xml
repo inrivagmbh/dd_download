@@ -16,6 +16,7 @@
 			<label index="tx_dddownload_domain_model_file.thumb">Thumbnail</label>
 			<label index="tx_dddownload_domain_model_file.link">External link</label>
 			<label index="tx_dddownload_domain_model_file.categories">Categories</label>
+			<label index="tx_dddownload_domain_model_file.tags">Tags</label>
 			<label index="tx_dddownload_domain_model_file.filesize">Filesize</label>
 			<label index="tx_dddownload_domain_model_category">File Categories</label>
 			<label index="tx_dddownload_domain_model_category.title">Title</label>
@@ -23,6 +24,9 @@
 			<label index="tx_dddownload_domain_model_tag">Tag</label>
 			<label index="tx_dddownload_domain_model_tag.title">Title</label>
 			<label index="tx_dddownload.filterCategory">Filter Category</label>
+			<label index="tx_dddownload.filterCategoryChoose">Choose filter...</label>
+			<label index="tx_dddownload.filterTag">Filter Tag</label>
+			<label index="tx_dddownload.filterTagChoose">Choose filter...</label>
 			<label index="tx_dddownload.filterSubmit">Filter</label>
 		</languageKey>
 		<languageKey index="de" type="array">	
