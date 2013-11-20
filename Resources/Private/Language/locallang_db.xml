@@ -9,6 +9,8 @@
 			<label index="tx_dddownload_domain_model_file">File</label>
 			<label index="tx_dddownload_domain_model_file.title">Title</label>
 			<label index="tx_dddownload_domain_model_file.description">Description</label>
+			<label index="tx_dddownload_domain_model_file.author">Author</label>
+			<label index="tx_dddownload_domain_model_file.publishing_date">Publishing Date</label>
 			<label index="tx_dddownload_domain_model_file.file">File</label>
 			<label index="tx_dddownload_domain_model_file.filename">File-/Linkname (optional)</label>
 			<label index="tx_dddownload_domain_model_file.thumb">Thumbnail</label>
@@ -46,6 +48,8 @@
 			<label index="tx_dddownload_domain_model_file">Datei</label>
 			<label index="tx_dddownload_domain_model_file.title">Titel</label>
 			<label index="tx_dddownload_domain_model_file.description">Beschreibung</label>
+			<label index="tx_dddownload_domain_model_file.author">Author</label>
+			<label index="tx_dddownload_domain_model_file.publishing_date"><![CDATA[Ver&ouml;ffentlichungsdatum]]></label>
 			<label index="tx_dddownload_domain_model_file.file">Datei</label>
 			<label index="tx_dddownload_domain_model_file.filename">Datei-/Linkname (optional)</label>
 			<label index="tx_dddownload_domain_model_file.thumb">Thumbnail</label>
