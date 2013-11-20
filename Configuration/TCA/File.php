@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_dddownload_domain_model_file'] = array(
 	'ctrl' => $TCA['tx_dddownload_domain_model_file']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, file, filename, thumb, link, categories, tags',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, author, publishing_date, file, filename, thumb, link, categories, tags',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, file, categories, tags,--div--;LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:tx_dddownload_domain_model_file.add;sys_language_uid;;;;1-1-1, filename, link, description, thumb,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, author, publishing_date, file, categories, tags,--div--;LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:tx_dddownload_domain_model_file.add;sys_language_uid;;;;1-1-1, filename, link, description, thumb,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -122,6 +122,24 @@ $TCA['tx_dddownload_domain_model_file'] = array(
 				)
 			),
 			'defaultExtras' => 'richtext[]',
+		),
+		'author' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:tx_dddownload_domain_model_file.author',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
+		),
+		'publishing_date' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:tx_dddownload_domain_model_file.publishing_date',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
 		),
 		'file' => array(
 			'exclude' => 0,

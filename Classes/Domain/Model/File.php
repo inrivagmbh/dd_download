@@ -49,6 +49,20 @@ class Tx_DdDownload_Domain_Model_File extends Tx_Extbase_DomainObject_AbstractEn
 	protected $description;
 
 	/**
+	 * Author
+	 *
+	 * @var string
+	 */
+	protected $author;
+
+	/**
+	 * Publishing Date
+	 *
+	 * @var string
+	 */
+	protected $publishingDate;
+
+	/**
 	 * File
 	 *
 	 * @var string
@@ -243,4 +257,33 @@ class Tx_DdDownload_Domain_Model_File extends Tx_Extbase_DomainObject_AbstractEn
 	public function getTags() {
 		return $this->tags;
 	}
+
+	/**
+	 * @param string $author
+	 */
+	public function setAuthor($author) {
+		$this->author = $author;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getAuthor() {
+		return $this->author;
+	}
+
+	/**
+	 * @param string $publishingDate
+	 */
+	public function setPublishingDate($publishingDate) {
+		$this->publishingDate = $publishingDate;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getPublishingDate() {
+		return $this->publishingDate;
+	}
+
 }

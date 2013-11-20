@@ -8,6 +8,8 @@ CREATE TABLE tx_dddownload_domain_model_file (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text NOT NULL,
+	author varchar(255) DEFAULT '' NOT NULL,
+	publishing_date varchar(255) DEFAULT '' NOT NULL,
 	file text NOT NULL,
 	filename varchar(255) DEFAULT '' NOT NULL,
 	thumb text NOT NULL,
