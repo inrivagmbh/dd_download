@@ -1,4 +1,4 @@
-<f:form action="List" method="get">
+<f:form action="List" method="post">
 	<f:if condition="{settings.enableFeCategoryFilter}">
 		<label for="category"><f:translate key="tx_dddownload.filterCategory" /></label>
 		<f:form.select name="category" options="{permittedCategories}" optionLabelField="title" value="{selectedFilterCategory.uid}" prependOptionLabel="{f:translate(key: 'tx_dddownload.filterCategoryChoose')}" />
