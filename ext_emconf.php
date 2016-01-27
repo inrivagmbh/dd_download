@@ -3,7 +3,7 @@
 /***************************************************************
  * Extension Manager/Repository config file for ext "dd_download".
  *
- * Auto generated 16-10-2013 10:00
+ * Auto generated 09-04-2015 09:15
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next
@@ -14,39 +14,19 @@ $EM_CONF[$_EXTKEY] = array (
 	'title' => 'DD Downloads',
 	'description' => 'A simple download extension for different filetypes.',
 	'category' => 'plugin',
-	'shy' => 0,
-	'version' => '1.0.4',
-	'dependencies' => '',
-	'conflicts' => '',
-	'priority' => '',
-	'loadOrder' => '',
-	'module' => '',
+	'version' => '1.1.1',
 	'state' => 'beta',
 	'uploadfolder' => 1,
 	'createDirs' => '',
-	'modify_tables' => '',
 	'clearcacheonload' => 0,
-	'lockType' => '',
-	'author' => 'Dennis Puszalowski',
-	'author_email' => 'info@wildpixel.de',
+	'author' => 'Dennis Donzelmann',
+	'author_email' => 'info@dennisdonzelmann.de',
 	'author_company' => '',
-	'CGLcompliance' => NULL,
-	'CGLcompliance_note' => NULL,
-	'constraints' => 
-	array (
-		'depends' => 
-		array (
-			'extbase' => '1.3',
-			'fluid' => '1.3',
-			'typo3' => '4.5-0.0.0',
-		),
-		'conflicts' => 
-		array (
-		),
-		'suggests' => 
-		array (
-		),
-	),
+	'constraints' => array(
+                'depends' => array(
+                        'typo3' => '6.2.0-7.2.99',
+                ),
+                'conflicts' => array(),
+                'suggests' => array()
+        ),
 );
-
-?>

@@ -3,7 +3,7 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Dennis Puszalowski <info@wildpixel.de>
+ *  (c) 2013 Dennis Donzelmann <info@dennisdonzelmann.de>
  *  
  *  All rights reserved
  *
@@ -31,7 +31,7 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Tx_DdDownload_Domain_Model_File extends Tx_Extbase_DomainObject_AbstractEntity {
+class Tx_DdDownload_Domain_Model_File extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Title
@@ -47,20 +47,6 @@ class Tx_DdDownload_Domain_Model_File extends Tx_Extbase_DomainObject_AbstractEn
 	 * @var string
 	 */
 	protected $description;
-
-	/**
-	 * Author
-	 *
-	 * @var string
-	 */
-	protected $author;
-
-	/**
-	 * Publishing Date
-	 *
-	 * @var string
-	 */
-	protected $publishingDate;
 
 	/**
 	 * File
@@ -91,20 +77,12 @@ class Tx_DdDownload_Domain_Model_File extends Tx_Extbase_DomainObject_AbstractEn
 	protected $link;
 
 	/**
-	 * Categories
+	 * Category
 	 *
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_DdDownload_Domain_Model_Category>
+	 * @var Tx_DdDownload_Domain_Model_Category
 	 * @lazy
 	 */
-	protected $categories;
-
-	/**
-	 * Tags
-	 *
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_DdDownload_Domain_Model_Tag>
-	 * @lazy
-	 */
-	protected $tags;
+	protected $category;
 
 	/**
 	 * Returns the title
@@ -221,69 +199,23 @@ class Tx_DdDownload_Domain_Model_File extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Sets the categories
+	 * Returns the category
 	 *
-	 * @param Tx_Extbase_Persistence_ObjectStorage $categories
+	 * @return Tx_DdDownload_Domain_Model_Category $category
+	 */
+	public function getCategory() {
+		return $this->category;
+	}
+
+	/**
+	 * Sets the category
+	 *
+	 * @param Tx_DdDownload_Domain_Model_Category $category
 	 * @return void
 	 */
-	public function setCategories(Tx_Extbase_Persistence_ObjectStorage $categories) {
-		$this->categories = $categories;
-	}
-
-	/**
-	 * Returns the categories
-	 *
-	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_DdDownload_Domain_Model_Category> $categories
-	 */
-	public function getCategories() {
-		return $this->categories;
-	}
-
-	/**
-	 * Sets the tags
-	 *
-	 * @param Tx_Extbase_Persistence_ObjectStorage $tags
-	 * @return void
-	 */
-	public function setTags(Tx_Extbase_Persistence_ObjectStorage $tags) {
-		$this->tags = $tags;
-	}
-
-	/**
-	 * Returns the tags
-	 *
-	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_DdDownload_Domain_Model_Tag> $tags
-	 */
-	public function getTags() {
-		return $this->tags;
-	}
-
-	/**
-	 * @param string $author
-	 */
-	public function setAuthor($author) {
-		$this->author = $author;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getAuthor() {
-		return $this->author;
-	}
-
-	/**
-	 * @param string $publishingDate
-	 */
-	public function setPublishingDate($publishingDate) {
-		$this->publishingDate = $publishingDate;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getPublishingDate() {
-		return $this->publishingDate;
+	public function setCategory(Tx_DdDownload_Domain_Model_Category $category) {
+		$this->category = $category;
 	}
 
 }
+?>

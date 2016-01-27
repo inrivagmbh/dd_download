@@ -1,0 +1,16 @@
+mod.wizards.newContentElement.wizardItems {
+     plugin {
+          elements {         
+               tx_dddownload {
+                    title = LLL:EXT:dd_download/Resources/Private/Language/locallang.xml:tx_dddownload_domain_model_file.extname
+                    description = LLL:EXT:dd_download/Resources/Private/Language/locallang.xml:tx_dddownload_domain_model_file.extdesc
+                    icon = ../typo3conf/ext/dd_download/Resources/Public/Icons/ce_wiz.gif
+                    tt_content_defValues {
+                         CType = list
+                         list_type = dddownload_dddownfe
+                    }
+               }
+          }
+          show := addToList(tx_dddownload)
+     }
+}

@@ -9,31 +9,21 @@
 			<label index="tx_dddownload_domain_model_file">File</label>
 			<label index="tx_dddownload_domain_model_file.title">Title</label>
 			<label index="tx_dddownload_domain_model_file.description">Description</label>
-			<label index="tx_dddownload_domain_model_file.author">Author</label>
-			<label index="tx_dddownload_domain_model_file.publishing_date">Publishing Date</label>
 			<label index="tx_dddownload_domain_model_file.file">File</label>
 			<label index="tx_dddownload_domain_model_file.filename">File-/Linkname (optional)</label>
 			<label index="tx_dddownload_domain_model_file.thumb">Thumbnail</label>
 			<label index="tx_dddownload_domain_model_file.link">External link (without 'http://') / instead of download</label>
-			<label index="tx_dddownload_domain_model_file.categories">Categories</label>
+			<label index="tx_dddownload_domain_model_file.category">Category</label>
 			<label index="tx_dddownload_domain_model_file.categorychoose">Please choose ...</label>
-			<label index="tx_dddownload_domain_model_file.tags">Tags</label>
-			<label index="tx_dddownload_domain_model_file.tagchoose">Please choose ...</label>
 			<label index="tx_dddownload_domain_model_file.add">Additional</label>
-
+			
 			<label index="tx_dddownload_domain_model_category">Category</label>
 			<label index="tx_dddownload_domain_model_category.title">Title</label>
 			<label index="tx_dddownload_domain_model_category.icon">Icon</label>
-			<label index="tx_dddownload_domain_model_category.files">Files</label>
-
-			<label index="tx_dddownload_domain_model_tag">Tag</label>
-			<label index="tx_dddownload_domain_model_tag.title">Title</label>
-
+			
 			<label index="flexform.main">Main Settings</label>
 			<label index="flexform.tmpl">Select alternate template</label>
 			<label index="flexform.categories">Displayable categories</label>
-			<label index="flexform.enableFeCategoryFilter">Allow category filtering?</label>
-			<label index="flexform.enableFeTagFilter">Allow tag filtering?</label>
 			<label index="flexform.sorting">Sortorder</label>
 			<label index="flexform.choose">Please choose ...</label>
 			<label index="flexform.chooseasc">ascending</label>
@@ -44,34 +34,25 @@
 			<label index="flexform.orderByUid">Record ID</label>
 			<label index="flexform.orderByCrdate">Creation Date</label>
 		</languageKey>
-		<languageKey index="de" type="array">
+		<languageKey index="de" type="array">           
 			<label index="tx_dddownload_domain_model_file">Datei</label>
 			<label index="tx_dddownload_domain_model_file.title">Titel</label>
 			<label index="tx_dddownload_domain_model_file.description">Beschreibung</label>
-			<label index="tx_dddownload_domain_model_file.author">Author</label>
-			<label index="tx_dddownload_domain_model_file.publishing_date"><![CDATA[Ver&ouml;ffentlichungsdatum]]></label>
 			<label index="tx_dddownload_domain_model_file.file">Datei</label>
 			<label index="tx_dddownload_domain_model_file.filename">Datei-/Linkname (optional)</label>
 			<label index="tx_dddownload_domain_model_file.thumb">Thumbnail</label>
 			<label index="tx_dddownload_domain_model_file.link">Externer link (ohne 'http://') / anstatt Download</label>
-			<label index="tx_dddownload_domain_model_file.categories">Kategorien</label>
+			<label index="tx_dddownload_domain_model_file.category">Kategorie</label>
 			<label index="tx_dddownload_domain_model_file.categorychoose">Bitte ausw&#228;hlen ...</label>
-			<label index="tx_dddownload_domain_model_file.tags">Tags</label>
-			<label index="tx_dddownload_domain_model_file.tagchoose">Bitte ausw&#228;hlen ...</label>
 			<label index="tx_dddownload_domain_model_file.add">Weiteres</label>
-
+			
 			<label index="tx_dddownload_domain_model_category">Kategorie</label>
 			<label index="tx_dddownload_domain_model_category.title">Titel</label>
 			<label index="tx_dddownload_domain_model_category.icon">Icon</label>
-
-			<label index="tx_dddownload_domain_model_tag">Tag</label>
-			<label index="tx_dddownload_domain_model_tag.title">Titel</label>
-
+			
 			<label index="flexform.main">Allgemein</label>
 			<label index="flexform.tmpl">Alternatives Template ausw&#228;hlen</label>
 			<label index="flexform.categories">Anzuzeigende Kategorien</label>
-			<label index="flexform.enableFeCategoryFilter">Kategorie Filterung erlauben?</label>
-			<label index="flexform.enableFeTagFilter">Tag Filterung erlauben?</label>
 			<label index="flexform.sorting">Reihenfolge</label>
 			<label index="flexform.choose">Bitte ausw&#228;hlen ...</label>
 			<label index="flexform.chooseasc">aufsteigend</label>

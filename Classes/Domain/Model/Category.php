@@ -3,7 +3,7 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Dennis Puszalowski <info@wildpixel.de>
+ *  (c) 2013 Dennis Donzelmann <info@dennisdonzelmann.de>
  *  
  *  All rights reserved
  *
@@ -31,7 +31,7 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Tx_DdDownload_Domain_Model_Category extends Tx_Extbase_DomainObject_AbstractEntity {
+class Tx_DdDownload_Domain_Model_Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Title
@@ -47,14 +47,6 @@ class Tx_DdDownload_Domain_Model_Category extends Tx_Extbase_DomainObject_Abstra
 	 * @var string
 	 */
 	protected $icon;
-
-	/**
-	 * Files
-	 *
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_DdDownload_Domain_Model_File>
-	 * @lazy
-	 */
-	protected $files;
 
 	/**
 	 * Returns the title
@@ -94,23 +86,5 @@ class Tx_DdDownload_Domain_Model_Category extends Tx_Extbase_DomainObject_Abstra
 		$this->icon = $icon;
 	}
 
-	/**
-	 * Sets the files
-	 *
-	 * @param Tx_Extbase_Persistence_ObjectStorage $files
-	 * @return void
-	 */
-	public function setFiles(Tx_Extbase_Persistence_ObjectStorage $files) {
-		$this->files = $files;
-	}
-
-	/**
-	 * Returns the files
-	 *
-	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_DdDownload_Domain_Model_File> $files
-	 */
-	public function getFiles() {
-		return $this->files;
-	}
-
 }
+?>

@@ -3,12 +3,12 @@ if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-Tx_Extbase_Utility_Extension::configurePlugin(
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	$_EXTKEY,
 	'Dddownfe',
 	array(
 		'File' => 'list',
-		
+	
 	),
 	// non-cacheable actions
 	array(
@@ -16,5 +16,8 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 		
 	)
 );
+
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TSconfig/Page/wizard.txt">');
 
 ?>

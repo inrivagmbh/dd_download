@@ -3,7 +3,7 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Dennis Puszalowski <info@wildpixel.de>
+ *  (c) 2013 Dennis Donzelmann <info@dennisdonzelmann.de>
  *  
  *  All rights reserved
  *
@@ -31,7 +31,7 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Tx_DdDownload_ViewHelpers_ExplodeViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class Tx_DdDownload_ViewHelpers_ExplodeViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 	
 	/**
 	 * Returns the category ids

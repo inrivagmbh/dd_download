@@ -1,10 +1,12 @@
 <?php
+	
+
 
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Dennis Puszalowski <info@wildpixel.de>
- *
+ *  (c) 2013 Dennis Donzelmann <info@dennisdonzelmann.de>
+ *  
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,12 +28,13 @@
 
 /**
  *
- * @author Dennis Puszalowski <info@wildpixel.de>, Benjamin Rau <rau@codearts.at>
+ *
  * @package dd_download
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Tx_DdDownload_Controller_FileController extends Tx_Extbase_MVC_Controller_ActionController {
+
+class Tx_DdDownload_Controller_FileController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
 	 * fileRepository
@@ -51,104 +54,64 @@ class Tx_DdDownload_Controller_FileController extends Tx_Extbase_MVC_Controller_
 	}
 
 	/**
-	 * categoryRepository
-	 *
-	 * @var Tx_DdDownload_Domain_Repository_CategoryRepository
-	 */
-	protected $categoryRepository;
-
-	/**
-	 * injectCategoryRepository
-	 *
-	 * @param Tx_DdDownload_Domain_Repository_CategoryRepository $categoryRepository
-	 * @return void
-	 */
-	public function injectCategoryRepository(Tx_DdDownload_Domain_Repository_CategoryRepository $categoryRepository) {
-		$this->categoryRepository = $categoryRepository;
-	}
-
-	/**
 	 * action list
 	 *
-	 * @param Tx_DdDownload_Domain_Model_Category $category
-	 * @param Tx_DdDownload_Domain_Model_Tag $tag
 	 * @return void
 	 */
-	public function listAction(Tx_DdDownload_Domain_Model_Category $category = NULL, Tx_DdDownload_Domain_Model_Tag $tag = NULL) {
-		$permittedCategoryUids = explode(',', $this->settings['categories']);
-		$permittedCategories = $this->categoryRepository->findByUids($permittedCategoryUids);
-
-		if (TRUE === isset($category) && TRUE == intval($this->settings['enableFeCategoryFilter'])) {
-			$selectedFilterCategory = $category;
-
-			if (TRUE === in_array($selectedFilterCategory->getUid(), $permittedCategoryUids)) {
-				$categories[] = $selectedFilterCategory;
-				$this->view->assign('selectedFilterCategory', $selectedFilterCategory);
-			}
-		}
-
-		if (FALSE === isset($categories)) {
-			$categories = $permittedCategories;
-		}
-
-		if (TRUE == intval($this->settings['enableFeTagFilter'])) {
-			$permittedTags = array();
-			foreach ($categories AS $category) {
-				foreach ($category->getFiles() AS $file) {
-					foreach($file->getTags() AS $t) {
-						$permittedTags[$t->getUid()] = $t;
-					}
-				}
-			}
-			$this->view->assign('permittedTags', $permittedTags);
-
-			if (TRUE === isset($tag)) {
-				$selectedFilterTag = $tag;
-				$this->view->assign('selectedFilterTag', $selectedFilterTag);
-			}
-		}
-
+	public function listAction() {
+		//$extutil = new Tx_Extbase_Utility_Extension;
+		//$extutil->createAutoloadRegistryForExtension('dd_download', t3lib_extMgm::extPath('dd_download'));
+		
 		$fileSort = $this->settings['sorting'];
 		$orderBy = $this->settings['orderBy'];
-
-		if (empty($this->settings['orderBy'])) {
+		
+		if(empty($this->settings['orderBy'])) {
 			$orderBy = 'uid';
 		}
-
-		switch ($fileSort) {
+		
+		switch($fileSort) {
 			case 'ORDER_ASCENDING':
-				$defaultOrderings = array($orderBy => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING);
+				$defaultOrderings = array($orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING);
 				break;
-
+				
 			case 'ORDER_DESCENDING':
-				$defaultOrderings = array($orderBy => Tx_Extbase_Persistence_QueryInterface::ORDER_DESCENDING);
+				$defaultOrderings = array($orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING);
 				break;
-
+				
 			default:
-				$defaultOrderings = array($orderBy => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING);
+				$defaultOrderings = array($orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING);
 				break;
 		}
-
-		if ('' !== $this->settings['orderBy'] || '' !== $this->settings['sorting']) {
-			$this->fileRepository->setDefaultOrderings($defaultOrderings);
-			$files = array();
-			foreach ($categories AS $category) {
-				$files = $this->fileRepository->findWithFilters($category, $selectedFilterTag, TRUE);
-				$category->setFiles($files);
-			}
-		}
-
+		
+		$this->fileRepository->setDefaultOrderings($defaultOrderings);
+		
+		
+		
 		/**
 		 * Template Switch
 		 */
-		if ($this->settings['template']) {
-			$this->view->setTemplatePathAndFilename($this->settings['template']);
+		$defaultTemplatePath = 'typo3conf/ext/'.$this->request->getControllerExtensionKey().'/Resources/Private/Templates/File/';
+		$userTemplate = $this->settings['template'];
+		
+		if($userTemplate) {
+			$this->view->setTemplatePathAndFilename($userTemplate);
 		}
-
-		if (TRUE == intval($this->settings['enableFeCategoryFilter']) || TRUE == intval($this->settings['enableFeTagFilter'])) {
-			$this->view->assign('enableFeFilter', TRUE);
+		else {
+			$this->view->setTemplatePathAndFilename($defaultTemplatePath.'List.html');
 		}
-		$this->view->assign('permittedCategories', $permittedCategories);
-		$this->view->assign('categories', $categories);
+		
+		
+		
+		$files = $this->fileRepository->findAll($fileSort);
+		$categories = $this->fileRepository->getAllCat();
+		
+		$this->view->assignMultiple(array(
+			'files'				=>		$files,
+			'categories'		=>		$categories
+		));
+		
+		//$this->view->assign('files', $files);
 	}
+
 }
+?>

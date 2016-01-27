@@ -14,7 +14,7 @@
 			<label index="filename.description">Optional Filename</label>
 			<label index="thumb.description">Thumbnail</label>
 			<label index="link.description">Link</label>
-			<label index="categories.description">Categories</label>
+			<label index="category.description">Category</label>
 		</languageKey>
 	</data>
 </T3locallang>

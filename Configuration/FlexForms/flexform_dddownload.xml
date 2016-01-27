@@ -8,6 +8,7 @@
 			</TCEforms>
 			<type>array</type>
 			<el>
+
 				<settings.template>
 					<TCEforms>
 						<label>LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:flexform.tmpl</label>
@@ -20,7 +21,13 @@
 					                <type>popup</type>
 					                <title>Link</title>
 					                <icon>link_popup.gif</icon>
-					                <script>browse_links.php?mode=wizard&amp;act=file</script>
+													<module type="array">
+														<name>wizard_element_browser</name>
+														<urlParameters type="array">
+															<mode>wizard</mode>
+															<act>file</act>
+														</urlParameters>
+													</module>
 					                <params type="array">
 					                        <blindLinkOptions>page,folder,url,mail,spec</blindLinkOptions>
 					                </params>
@@ -30,6 +37,7 @@
 						</config>
 					</TCEforms>
 				</settings.template>
+
 				<settings.categories>
 					<TCEforms>
 						<label>LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:flexform.categories</label>
@@ -41,14 +49,7 @@
 						</config>
 					</TCEforms>
 				</settings.categories>
-				<settings.enableFeCategoryFilter>
-					<TCEforms>
-						<label>LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:flexform.enableFeCategoryFilter</label>
-						<config>
-							<type>check</type>
-						</config>
-					</TCEforms>
-				</settings.enableFeCategoryFilter>
+
 				<settings.orderBy>
 					<TCEforms>
 						<label>LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:flexform.orderBy</label>
@@ -79,6 +80,7 @@
 						</config>
 					</TCEforms>
 				</settings.orderBy>
+
 				<settings.sorting>
 					<TCEforms>
 						<label>LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:flexform.sorting</label>
@@ -101,14 +103,7 @@
 						</config>
 					</TCEforms>
 				</settings.sorting>
-				<settings.enableFeTagFilter>
-					<TCEforms>
-						<label>LLL:EXT:dd_download/Resources/Private/Language/locallang_db.xml:flexform.enableFeTagFilter</label>
-						<config>
-							<type>check</type>
-						</config>
-					</TCEforms>
-				</settings.enableFeTagFilter>
+
 			</el>
 		</ROOT>
 	</Bereich1>

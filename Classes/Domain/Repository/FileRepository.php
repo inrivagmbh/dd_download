@@ -3,7 +3,7 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Dennis Puszalowski <info@wildpixel.de>
+ *  (c) 2013 Dennis Donzelmann <info@dennisdonzelmann.de>
  *  
  *  All rights reserved
  *
@@ -31,31 +31,16 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Tx_DdDownload_Domain_Repository_FileRepository extends Tx_Extbase_Persistence_Repository {
+class Tx_DdDownload_Domain_Repository_FileRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
-	/**
-	 * @param Tx_DdDownload_Domain_Model_Category $category
-	 * @param Tx_DdDownload_Domain_Model_Tag $tag
-	 * @param boolean $returnObjectStorage
-	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface $result
-	 */
-	public function findWithFilters($category, $tag = NULL, $returnObjectStorage = FALSE) {
+	//protected $defaultOrderings = array('sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING);
+	
+	public function getAllCat() {
 		$query = $this->createQuery();
-		$rules = $query->contains('categories', $category);
-		if (TRUE === isset($tag)) {
-			$tagRule = $query->contains('tags', $tag);
-			$rules = $query->logicalAnd($rules, $tagRule);
-		}
-		$result = $query->matching($rules)->execute();
-
-		if (TRUE === $returnObjectStorage) {
-			$objectStorage = new Tx_Extbase_Persistence_ObjectStorage();
-			foreach($result AS $obj) {
-				$objectStorage->attach($obj);
-			}
-			return $objectStorage;
-		}
-
-		return $result;
+		#$query->getQuerySettings()->setReturnRawQueryResult(TRUE);
+		$query->statement('SELECT * FROM tx_dddownload_domain_model_category WHERE hidden = 0 ORDER BY sorting ASC');
+		return $query->execute(TRUE);
 	}
+
 }
+?>
